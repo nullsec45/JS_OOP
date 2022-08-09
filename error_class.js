@@ -13,6 +13,8 @@ class MathUtil{
     static sum(...numbers){
         if(numbers.length === 0){
             // Membuat error pada javascript jika panjang parameter  0 atau kurang dari 1;
+
+            // "numbers" merupakan field yang error
             throw new ValidationError("Total parameter harus lebih dari 0", "numbers");
         }
         let total=0;
@@ -27,6 +29,7 @@ try{
     console.info(MathUtil.sum());
     console.info("Error handling");
 }catch(error){
+    // Jika errornya instansiasi dari Class ValidationErro maka jalankan kode di bawah ini
     if(error instanceof ValidationError){
         console.info(`Terjadi error di field ${error.field} dengan error ${error.message}`);
     }
